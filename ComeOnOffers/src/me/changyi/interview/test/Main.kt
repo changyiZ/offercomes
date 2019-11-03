@@ -1,7 +1,7 @@
 package me.changyi.interview.test
 
-import me.changyi.interview.Question0302DuplicationInArrayNoEdit
+import me.changyi.interview.Q05_ReplaceSpaces
 
 fun main() {
-    Question0302DuplicationInArrayNoEdit().runTest()
+    Q05_ReplaceSpaces().runTest()
 }

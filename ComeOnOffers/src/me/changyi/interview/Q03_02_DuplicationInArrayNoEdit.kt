@@ -6,7 +6,7 @@ package me.changyi.interview
 // 数组。例如，如果输入长度为8的数组{2, 3, 5, 4, 3, 2, 6, 7}，那么对应的
 // 输出是重复的数字2或者3。
 
-class Question0302DuplicationInArrayNoEdit : Question0301DuplicationInArray() {
+class Q03_02_DuplicationInArrayNoEdit : Q03_01_DuplicationInArray() {
 
     override fun duplicate(inputArray: IntArray?): IntArray? {
         val size = inputArray?.size ?: return null
