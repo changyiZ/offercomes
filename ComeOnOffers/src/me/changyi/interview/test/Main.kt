@@ -1,7 +1,7 @@
 package me.changyi.interview.test
 
-import me.changyi.interview.Q06_PrintListInReversedOrder
+import me.changyi.interview.Q07_ConstructBinaryTree
 
 fun main() {
-    Q06_PrintListInReversedOrder().runTest()
+    Q07_ConstructBinaryTree().runTest()
 }
