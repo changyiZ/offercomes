@@ -1,5 +1,15 @@
 package me.changyi.interview.test
 
-interface Test {
-    fun runTest()
+abstract class Test {
+    abstract fun runTest()
+
+    protected fun test(result: Int?, answer: Int) {
+        println(
+            if (result == answer) {
+                "Passed"
+            } else {
+                "Failed"
+            }
+        )
+    }
 }

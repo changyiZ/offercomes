@@ -9,7 +9,7 @@ import me.changyi.interview.test.Test
 // 2, 4, 7, 3, 5, 6, 8}和中序遍历序列{4, 7, 2, 1, 5, 3, 8, 6}，则重建出
 // 图2.6所示的二叉树并输出它的头结点。
 
-class Q07_ConstructBinaryTree : Test {
+class Q07_ConstructBinaryTree : Test() {
 
     private fun construct(preOrder: IntArray?, inOder: IntArray?): BinaryTreeNode? {
         if (preOrder == null || inOder == null || preOrder.size != inOder.size || preOrder.isEmpty()) {

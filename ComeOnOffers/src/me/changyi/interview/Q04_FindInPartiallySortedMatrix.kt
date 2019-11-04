@@ -8,7 +8,7 @@ import java.util.*
 // 照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个
 // 整数，判断数组中是否含有该整数。
 
-class Q04_FindInPartiallySortedMatrix : Test {
+class Q04_FindInPartiallySortedMatrix : Test() {
 
     private fun findNumberInMatrix(matrix: Array<IntArray>?, row: Int, column: Int, number: Int): Boolean {
         if (row > 0 && column > 0 && row == matrix?.size) {

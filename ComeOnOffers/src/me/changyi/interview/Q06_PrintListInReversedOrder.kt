@@ -8,7 +8,7 @@ import java.lang.StringBuilder
 // 面试题6：从尾到头打印链表(单向)
 // 题目：输入一个链表的头结点，从尾到头反过来打印出每个结点的值。
 
-class Q06_PrintListInReversedOrder : Test {
+class Q06_PrintListInReversedOrder : Test() {
 
     private fun printBackward(linkedList: LinkedList<Int>?): String? {
         linkedList ?: return null

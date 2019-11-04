@@ -5,8 +5,18 @@ import java.lang.StringBuilder
 
 class BinaryTreeNode(val value: Int) {
 
+    var parentTreeNode: BinaryTreeNode? = null
     var leftTreeNode: BinaryTreeNode? = null
     var rightTreeNode: BinaryTreeNode? = null
+
+    val treeRoot: BinaryTreeNode
+        get() {
+            var root = this
+            while (root.parentTreeNode != null) {
+                root = root.parentTreeNode!!
+            }
+            return root
+        }
 
     val depth: Int
         get() {
@@ -19,6 +29,15 @@ class BinaryTreeNode(val value: Int) {
             }
         }
 
+    fun connectNodes(left: BinaryTreeNode?, right: BinaryTreeNode?) {
+        leftTreeNode = left?.apply {
+            parentTreeNode = this@BinaryTreeNode
+        }
+        rightTreeNode = right?.apply {
+            parentTreeNode = this@BinaryTreeNode
+        }
+    }
+
     /**
      * Print binaryTree in preOrder.
      */
@@ -26,9 +45,9 @@ class BinaryTreeNode(val value: Int) {
         return StringBuilder().apply {
             append("{$value")
             if (leftTreeNode != null)
-                append(", ${leftTreeNode.toString()}")
+                append(", left=${leftTreeNode.toString()}")
             if (rightTreeNode != null)
-                append(", ${rightTreeNode.toString()}")
+                append(", right=${rightTreeNode.toString()}")
             append("}")
         }.toString()
     }

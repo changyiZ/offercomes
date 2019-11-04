@@ -9,7 +9,7 @@ import java.util.*
 // 也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。例如，如果输入长度为7的数组{2, 3, 1, 0, 2, 5, 3}，
 // 那么对应的输出是重复的数字2或者3。
 
-open class Q03_01_DuplicationInArray : Test {
+open class Q03_01_DuplicationInArray : Test() {
 
     protected open fun duplicate(inputArray: IntArray?): IntArray? {
         val size = inputArray?.size ?: return null
