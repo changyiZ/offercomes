@@ -6,5 +6,5 @@ fun main() {
     // Searching
     // Searching().runTest()
     // Questions
-    Q11_MinNumberInRotatedArray().runTest()
+    Q14_CuttingRope().runTest()
 }

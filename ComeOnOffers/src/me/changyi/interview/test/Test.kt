@@ -3,9 +3,9 @@ package me.changyi.interview.test
 abstract class Test {
     abstract fun runTest()
 
-    protected fun test(result: Int?, answer: Int) {
+    protected fun test(result: Int?, expected: Int) {
         println(
-            if (result == answer) {
+            if (result == expected) {
                 "Passed"
             } else {
                 "Failed"
