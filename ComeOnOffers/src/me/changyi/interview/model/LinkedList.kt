@@ -5,9 +5,9 @@ class Node<T>(var value: T) {
     var previous: Node<T>? = null
 }
 
-class LinkedList<T> {
+class LinkedList<T>(vararg values: T) {
 
-    private var head: Node<T>? = null
+    var head: Node<T>? = null
 
     val isEmpty: Boolean
         get() = head == null
@@ -35,6 +35,23 @@ class LinkedList<T> {
             }
             return count
         }
+
+    init {
+        if (values.isNotEmpty()) {
+            head= Node(values[0])
+            if (values.size > 1) {
+                var current = head!!
+                for (index in 1 until values.size) {
+                    current.next = Node(values[index])
+                    current = current.next!!
+                }
+            }
+        }
+    }
+
+    constructor(head: Node<T>) : this() {
+        this.head = head
+    }
 
     fun nodeAtIndex(index: Int): Node<T>? {
         if (index >= 0) {

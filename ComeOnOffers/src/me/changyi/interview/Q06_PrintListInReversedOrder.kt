@@ -29,8 +29,7 @@ class Q06_PrintListInReversedOrder : Test() {
     }
 
     override fun runTest() {
-        val linkedList = LinkedList<Int>()
-        linkedList.append(1).append(2).append(3).append(4)
+        val linkedList = LinkedList(1, 2, 3, 4)
         print(printBackward(linkedList))
     }
 }

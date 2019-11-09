@@ -6,5 +6,5 @@ fun main() {
     // Searching
     // Searching().runTest()
     // Questions
-    Q14_CuttingRope().runTest()
+    Q18_02_DeleteDuplicatedNode().runTest()
 }
