@@ -6,5 +6,7 @@ fun main() {
     // Searching
     // Searching().runTest()
     // Questions
-    Q18_02_DeleteDuplicatedNode().runTest()
+    Q21_ReorderArray().runTest()
+
+    // TODO: Q13, Q20
 }
