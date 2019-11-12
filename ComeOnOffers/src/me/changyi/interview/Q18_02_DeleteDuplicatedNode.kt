@@ -2,7 +2,7 @@ package me.changyi.interview
 
 import me.changyi.interview.algorithm.mergeSort
 import me.changyi.interview.model.LinkedList
-import me.changyi.interview.model.Node
+import me.changyi.interview.model.ListNode
 import me.changyi.interview.test.Test
 
 // 面试题18（二）：删除链表中重复的结点
@@ -17,7 +17,7 @@ class Q18_02_DeleteDuplicatedNode : Test() {
         if (list.head?.next != null) {
             var current = list.head
             // 赋值第一个值，作为 -1 节点
-            var prev = Node(current!!.value).apply {
+            var prev = ListNode(current!!.value).apply {
                 next = current
             }.also {
                 list.head = it

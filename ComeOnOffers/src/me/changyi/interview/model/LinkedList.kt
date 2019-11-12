@@ -1,21 +1,18 @@
 package me.changyi.interview.model
 
-class Node<T>(var value: T) {
-    var next: Node<T>? = null
-    var previous: Node<T>? = null
+class ListNode<T>(var value: T) {
+    var next: ListNode<T>? = null
+    var previous: ListNode<T>? = null
 }
 
 class LinkedList<T>(vararg values: T) {
 
-    var head: Node<T>? = null
+    var head: ListNode<T>? = null
 
     val isEmpty: Boolean
         get() = head == null
 
-    val first: Node<T>?
-        get() = head
-
-    val last: Node<T>?
+    val last: ListNode<T>?
         get() {
             var node = head
             while (node?.next != null) {
@@ -38,22 +35,22 @@ class LinkedList<T>(vararg values: T) {
 
     init {
         if (values.isNotEmpty()) {
-            head= Node(values[0])
+            head= ListNode(values[0])
             if (values.size > 1) {
                 var current = head!!
                 for (index in 1 until values.size) {
-                    current.next = Node(values[index])
+                    current.next = ListNode(values[index])
                     current = current.next!!
                 }
             }
         }
     }
 
-    constructor(head: Node<T>) : this() {
+    constructor(head: ListNode<T>) : this() {
         this.head = head
     }
 
-    fun nodeAtIndex(index: Int): Node<T>? {
+    fun nodeAtIndex(index: Int): ListNode<T>? {
         if (index >= 0) {
             var node = head
             var current = 0
@@ -66,7 +63,7 @@ class LinkedList<T>(vararg values: T) {
     }
 
     fun append(value: T) : LinkedList<T> {
-        val newNode = Node(value)
+        val newNode = ListNode(value)
         val lastNode = last
         if (lastNode != null) {
             newNode.previous = lastNode
@@ -81,7 +78,7 @@ class LinkedList<T>(vararg values: T) {
         head = null
     }
 
-    fun removeNode(node: Node<T>): T {
+    fun removeNode(node: ListNode<T>): T {
         val prev = node.previous
         val next = node.next
         if (prev != null) {

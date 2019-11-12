@@ -13,7 +13,7 @@ class Q06_PrintListInReversedOrder : Test() {
     private fun printBackward(linkedList: LinkedList<Int>?): String? {
         linkedList ?: return null
         val stack = Stack<Int>()
-        var node = linkedList.first
+        var node = linkedList.head
         node ?: return null
         do {
             stack.push(node!!.value)

@@ -1,6 +1,7 @@
 package me.changyi.interview.model
 
 import java.lang.StringBuilder
+import java.util.LinkedList
 
 
 class BinaryTreeNode(val value: Int) {
@@ -18,6 +19,7 @@ class BinaryTreeNode(val value: Int) {
             return root
         }
 
+    // 用递归的方式计算
     val depth: Int
         get() {
             val leftDepth = leftTreeNode?.depth ?: 0
@@ -27,6 +29,32 @@ class BinaryTreeNode(val value: Int) {
             } else {
                 rightDepth
             }
+        }
+
+    // 用层次遍历的方式计算
+    val height: Int
+        get() {
+            val queue = LinkedList<BinaryTreeNode>()
+            queue.add(this)
+            var h = 0
+            var levelSize: Int
+            var levelCount: Int
+            while (queue.isNotEmpty()) {
+                levelSize = queue.size
+                levelCount = 0
+                while (levelCount++ < levelSize) {
+                    queue.poll()?.run {
+                        this.leftTreeNode?.run {
+                            queue.add(this)
+                        }
+                        this.rightTreeNode?.run {
+                            queue.add(this)
+                        }
+                    }
+                }
+                h++
+            }
+            return h
         }
 
     fun connectNodes(left: BinaryTreeNode?, right: BinaryTreeNode?) {

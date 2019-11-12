@@ -1,7 +1,7 @@
 package me.changyi.interview.algorithm
 
 import me.changyi.interview.model.LinkedList
-import me.changyi.interview.model.Node
+import me.changyi.interview.model.ListNode
 import me.changyi.interview.test.Test
 
 class Sorting : Test() {
@@ -70,7 +70,7 @@ private fun merge(list1: LinkedList<Int>, list2: LinkedList<Int>): LinkedList<In
     var node1 = list1.head
     var node2 = list2.head
     // 设定一个临时的 -1 节点
-    var node = Node(-1)
+    var node = ListNode(-1)
     val list = LinkedList(node)
     // Merging
     while (node1 != null && node2 != null) {

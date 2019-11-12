@@ -1,7 +1,7 @@
 package me.changyi.interview
 
 import me.changyi.interview.model.LinkedList
-import me.changyi.interview.model.Node
+import me.changyi.interview.model.ListNode
 import me.changyi.interview.test.Test
 
 // 面试题18（一）：在O(1)时间删除链表结点
@@ -11,11 +11,11 @@ import me.changyi.interview.test.Test
 
 class Q18_01_DeleteNodeInList : Test() {
 
-    private fun deleteNode(list: LinkedList<Int>?, node: Node<Int>?) {
+    private fun deleteNode(list: LinkedList<Int>?, node: ListNode<Int>?) {
         if (list?.head == null || node == null) {
             return
         }
-        var next: Node<Int>?
+        var next: ListNode<Int>?
         if (node.next != null) {
             // 删除的不是最后一个
             next = node.next!!
@@ -42,7 +42,7 @@ class Q18_01_DeleteNodeInList : Test() {
         }
     }
 
-    private fun test(list: LinkedList<Int>?, delete: Node<Int>?) {
+    private fun test(list: LinkedList<Int>?, delete: ListNode<Int>?) {
         println("************")
         println("${list.toString()}, delete=${delete?.value}")
         deleteNode(list, delete)
